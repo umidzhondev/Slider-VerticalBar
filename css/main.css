@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../font/Ubuntu-Medium.ttf");
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/** Slider styles */
+.slider {
+    width: 90%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slider__container {
+    width: 600px;
+    overflow: hidden;
+}
+
+.slider__boxs {
+    display: grid;
+    grid-template-columns: repeat(4, 600px);
+    transition: all .5s ease;
+}
+
+.slider__box {
+    width: 600px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slider__box-title {
+    color: #fff;
+    font-size: 5rem;
+}
+
+.slider__box-description {
+    font-size: 16px;
+    line-height: 1.6;
+    width: 80%;
+    color: rgb(255, 255, 255);
+    margin: 20px 0;
+}
+
+.slider__box-btn {
+    padding: .8rem 1.6rem;
+    background-color: #fff;
+    color: #000;
+    display: inline-block;
+    border-radius: 23px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/*? Slider Controller styles  */
+.slider__controller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 350px;
+    width: 3px;
+    background-color: rgb(52,47,47);
+    position: relative;
+}
+
+.slider__controller-lines {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 10px;
+}
+
+.slider__controller-lines div {
+    height: 25%;
+    width: 10px;
+    cursor: pointer;
+}
+
+.active {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: #fff;
+    width: 10px;
+    height: calc(350px / 4);
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(.68,-0.55,.27,1.55) 0s;
+}
+
+/*? Slider Controller styles end */
+/** Slider styles end */
+
+/* ! Responsive Media Queries*/
+@media screen and (max-width:992px) {
+    .slider__box-title{font-size: 4rem;}
+    .slider__box-description{font-size: 15px;}
+    .slider__box-btn{font-size: 1rem;}
+}
+@media screen and (max-width:768px) {
+    .container{width: 100%;}
+    .slider__box-title{font-size: 3.3rem;}
+    .slider__box-description{font-size: 15px;margin: 12px 0;line-height: 1.4;}
+    .slider__box-btn{padding: .7rem 1.4rem;}
+    .slider__controller{width: 2px;height: 260px;}
+    .slider__controller-lines,.slider__controller-lines div{width: 7px;}
+    .active{width: 7px;height: calc(260px/4);}
+}
+@media screen and (max-width:578px) {
+    .slider{justify-content: flex-start !important;height: auto;margin-top: 30px;}
+    .slider__box-title{font-size: 2.5rem;}
+    .slider__box-description{font-size: 14px;margin: 10px 0;width: 55%;}
+    .slider__box-btn{padding: .6rem 1.2rem;font-size: .9rem;}
+    .slider__controller{width: 2px;height: 210px;}
+    .slider__controller-lines,.slider__controller-lines div{width: 6px;}
+    .active{width: 6px;height: calc(210px/4);}
+}
+@media screen and (max-width:360px) {
+    .slider__box-title{font-size: 2rem;}
+    .slider__box-description{font-size: 13px;margin: 10px 0;width: 50%;}
+    .slider__box-btn{padding: .5rem 1rem;font-size: .8rem;}
+    .slider__controller{width: 2px;height: 180px;}
+    .slider__controller-lines,.slider__controller-lines div{width: 6px;}
+    .active{width: 6px;height: calc(180px/4);}
+}
+@media screen and (max-width:360px) {
+    .slider__box-description{font-size: 13px;margin: 10px 0;width: 44%;}
+}
+/* ! Responsive Media Queries end*
